@@ -1,6 +1,6 @@
 from celery import Celery
 
-app = Celery('tasks',broker='amqp://localhost:8000//')
+app = Celery('tasks',broker='amqp://ec2-52-66-180-183.ap-south-1.compute.amazonaws.com//')
 
 @app.task
 def reverse(string):
