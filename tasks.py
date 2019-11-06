@@ -1,7 +1,10 @@
 from celery import Celery
 
-app = Celery('tasks',broker='amqp://guest@rabbitmq1:5672//')
+app = Celery('tasks',broker='amqp://reymond:reymond201@localhost/ray_vhost')
 
 @app.task
-def reverse(string):
-    return string
+def reverse(s):
+  str = ""
+  for i in s:
+    str = i + str
+  return str
